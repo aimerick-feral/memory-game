@@ -1,0 +1,76 @@
+/* ========================================================== */
+/* ========================= RESET ========================== */
+/* ========================================================== */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================ */
+/* ===================== ALL SCREEN SIZES ===================== */
+/* ============================================================ */
+/* Colors used in the app */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --blue: #0000ff;
+  --green: #00ff00;
+  --purple: #cc00ff;
+  --yellow: #fbbc05;
+  --slimy-green: #009933;
+  --red: #ff0000;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  color: var(--black);
+}
+
+/* ============================================================ */
+/* ============== MOBILE WITH SMALL SCREEN SIZE =============== */
+/* ============================================================ */
+@media screen and (min-width: 320px) {
+  /* ============================================================ */
+  /* =================== WRAPPER FOR EACH PAGE ================== */
+  /* ============================================================ */
+  .wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--white);
+    /* background-color: var(--green); */
+    height: 100vh;
+  }
+
+  .header {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 0 0 0;
+    font-family: "Rubik Vinyl", cursive;
+    /* font-family: "Rubik Storm", cursive; */
+    text-align: center;
+    font-size: 1em;
+    color: var(--red);
+    /* background-color: var(--green); */
+  }
+
+  .score {
+    margin: 2em 0 2em 0;
+  }
+
+  .grid {
+    display: flex;
+    flex-flow: row wrap;
+    width: 300px;
+    height: 300px;
+  }
+}
