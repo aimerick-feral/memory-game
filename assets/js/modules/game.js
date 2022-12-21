@@ -15,53 +15,53 @@ const game = {
     // We create a array of images.
     game.images = [
       {
-        name: "bacon-cheesburger",
-        img: game.imagesFolderPath + "bacon-cheesburger.png",
+        name: "red",
+        img: game.imagesFolderPath + "red.png",
       },
       {
-        name: "bacon-cheesburger",
-        img: game.imagesFolderPath + "bacon-cheesburger.png",
+        name: "red",
+        img: game.imagesFolderPath + "red.png",
       },
       {
-        name: "burritos",
-        img: game.imagesFolderPath + "burritos.png",
+        name: "safety-orange",
+        img: game.imagesFolderPath + "safety-orange.png",
       },
       {
-        name: "burritos",
-        img: game.imagesFolderPath + "burritos.png",
+        name: "safety-orange",
+        img: game.imagesFolderPath + "safety-orange.png",
       },
       {
-        name: "fries",
-        img: game.imagesFolderPath + "fries.png",
+        name: "yellow",
+        img: game.imagesFolderPath + "yellow.png",
       },
       {
-        name: "fries",
-        img: game.imagesFolderPath + "fries.png",
+        name: "yellow",
+        img: game.imagesFolderPath + "yellow.png",
       },
       {
-        name: "hotdog",
-        img: game.imagesFolderPath + "hotdog.png",
+        name: "blue",
+        img: game.imagesFolderPath + "blue.png",
       },
       {
-        name: "hotdog",
-        img: game.imagesFolderPath + "hotdog.png",
+        name: "blue",
+        img: game.imagesFolderPath + "blue.png",
       },
 
       {
-        name: "pancakes",
-        img: game.imagesFolderPath + "pancakes.png",
+        name: "green",
+        img: game.imagesFolderPath + "green.png",
       },
       {
-        name: "pancakes",
-        img: game.imagesFolderPath + "pancakes.png",
+        name: "green",
+        img: game.imagesFolderPath + "green.png",
       },
       {
-        name: "pizza",
-        img: game.imagesFolderPath + "pizza.png",
+        name: "purple",
+        img: game.imagesFolderPath + "purple.png",
       },
       {
-        name: "pizza",
-        img: game.imagesFolderPath + "pizza.png",
+        name: "purple",
+        img: game.imagesFolderPath + "purple.png",
       },
     ];
 
@@ -155,7 +155,7 @@ const game = {
     // If the name of the first game.clickedImages is strictly equal to the name of the second game.clickedImages
     if (game.clickedImages[0] === game.clickedImages[1]) {
       // we display a dialog box with a message to te browser.
-      alert("You find a match !");
+      alert("You find a match ! ✅");
 
       // we set a src attribute with the path of the folder where we backup the image we want to display.
       imgs[optionOnId].setAttribute("src", game.imagesFolderPath + "white.png");
@@ -192,7 +192,7 @@ const game = {
       );
 
       // We display a dialog box with a message to te browser.
-      alert("The images dosen't match. Try again !");
+      alert("The images dosen't match ❌. Try again !");
     }
 
     // We empty our array to allow the user to start playing again.

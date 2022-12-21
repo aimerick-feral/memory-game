@@ -16,11 +16,13 @@
 :root {
   --black: #000000;
   --white: #ffffff;
-  --blue: #0000ff;
+  --light-gray: #cccccc;
   --red: #ff0000;
-  /* --green: #00ff00;
+  /* --blue: #0000ff;
+  --green: #00ff00;
   --purple: #cc00ff;
-  --yellow: #fbbc05; */
+  --yellow: #fbbc05;
+  --safety-orange: #ff6600; */
 }
 
 body {
@@ -28,8 +30,8 @@ body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   text-align: left;
-  background-color: var(--blue);
-  color: var(--white);
+  background-color: var(--light-gray);
+  color: var(--black);
 }
 
 .grid__image_pointer-events_none {
@@ -59,11 +61,15 @@ body {
     margin: 2em 0 0 0;
     font-family: "Press Start 2P", cursive;
     text-align: center;
-    font-size: 1em;
     color: var(--red);
   }
 
+  .header h1 {
+    font-size: 1.5em;
+  }
+
   .score {
+    font-size: 1em;
     margin: 4em 0 0 0;
   }
 
@@ -99,6 +105,14 @@ body {
 /* ========================== TABLET ========================== */
 /* ============================================================ */
 @media screen and (min-width: 768px) {
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .score {
+    font-size: 1.5em;
+  }
+
   .grid {
     width: 400px;
     height: 400px;
@@ -109,5 +123,11 @@ body {
 /* ========================== DESKTOP ========================= */
 /* ============================================================ */
 @media screen and (min-width: 992px) {
-  /*! None */
+  .header h1 {
+    font-size: 2.5em;
+  }
+
+  .score {
+    font-size: 2em;
+  }
 }
