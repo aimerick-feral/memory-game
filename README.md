@@ -1,4 +1,4 @@
-# Memory Game 🧠
+# Memory Game 
 
 The **Memory Game** project is game that can help you to train your memory.
 
