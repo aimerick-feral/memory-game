@@ -80,31 +80,31 @@ const game = {
     }
   },
   /**
-   * Method that create HTLM elements, set some attributes to them and add them to the DOM in order to create and display the game board.
+   * Method that create multiplie HTML elements <img>, set some attributes to them and add them to the DOM in order to create and display the game board.
    * @return {void}
    */
   createBoard: function () {
     console.log("game.createBoard()");
 
-    // For each each image of in game.images
+    // For each images in game.images we get the index.
     for (let index = 0; index < game.images.length; index++) {
-      // we create a HTML element with the <img> tag name.
+      // We create a HTML element <img>.
       let img = document.createElement("img");
-      // we set a src attribute with a path to the folder where we backup the images.
+      // We set a src attribute with a path to the folder where we backup the images.
       img.setAttribute("src", game.imagesFolderPath + "blank.png");
-      // we set a className attribute
+      // We set a class and a class name to the <img>.
       img.setAttribute("class", "grid__image");
-      // we set a id attribute dynamically
+      // We set dynamically a id attribute to the <img>.
       img.setAttribute("id", index);
-      // we add a listener and a handler on the click event.
+      // We add a listener and a handler on the click event to the <img>.
       img.addEventListener("click", game.switchImage);
-      // we add it to the game.grid
+      // We add the <img> to game.grid.
       game.grid.appendChild(img);
     }
   },
 
   /**
-   * Method that flip a image on a click event.
+   * Method that flip a image on the click event.
    * @param {Event} event
    * @return {void}
    */
@@ -117,21 +117,21 @@ const game = {
     // We get the id of the clickedImage.
     let clickedImageId = clickedImage.getAttribute("id");
 
-    // We push each image, according to it's id, to game.clickedImages and we get the name propertie of the image.
+    // We push each image, according to it's id, to game.clickedImages and we get the name property of the image.
     game.clickedImages.push(game.images[clickedImageId].name);
 
     // We push each image id to game.clickedImageIds.
     game.clickedImageIds.push(clickedImageId);
 
-    // We call tools.addClassToElements() in order to add a className to one or many elements.
+    // We call tools.addClassToElements() in order to add a className to one or several elements.
     tools.addClassToElements("grid__image_pointer-events_none", clickedImage);
 
     // We set a src attribute with in value the path of the image according to the clickedImageId.
     clickedImage.setAttribute("src", game.images[clickedImageId].img);
 
-    // If game.clickedImages contain more than 2 images
+    // If the number of images contains in game.clickedImages is strictly equal to 2.
     if (game.clickedImages.length === 2) {
-      // we call the method game.checkForMatch() after a delay of 150 milliseconds to be shure that the code don't excute to fast.
+      // We call the method game.checkForMatch() after a delay of 150 milliseconds to be shure that the code don't excute to fast.
       setTimeout(game.checkForMatch, 150);
     }
   },
@@ -145,19 +145,19 @@ const game = {
     // We get all the img that we created in game.createBoard().
     let imgs = document.querySelectorAll("img");
 
-    // At this point game.clickedImages and game.clickedImageIds contains each two value : the two clickedImages and both ids of this two clickedImages.
+    // At this point game.clickedImages and game.clickedImageIds contains each two value. the two clickedImages and both ids of this two clickedImages.
     // We get the first value of game.clickedImageIds which is the id of the first clickedImage.
     const optionOnId = game.clickedImageIds[0];
     // We get the second value of game.clickedImageIds which is the id of the second clickedImage.
     const optionTwoId = game.clickedImageIds[1];
 
     // The first value of game.clickedImages is the name of the image it contain.
-    // If the name of the first game.clickedImages is strictly equal to the name of the second game.clickedImages
+    // If the name of the first game.clickedImages is strictly equal to the name of the second game.clickedImages.
     if (game.clickedImages[0] === game.clickedImages[1]) {
-      // we display a dialog box with a message to te browser.
+      // We display a dialog box with a message to te browser.
       alert("You find a match ! ✅");
 
-      // we set a src attribute with the path of the folder where we backup the image we want to display.
+      // We set a src attribute with the path of the folder where we backup the image we want to display.
       imgs[optionOnId].setAttribute("src", game.imagesFolderPath + "white.png");
       imgs[optionTwoId].setAttribute(
         "src",
@@ -167,24 +167,23 @@ const game = {
       // We push each game.clickedImages to game.matchedImages.
       game.matchedImages.push(game.clickedImages);
 
-      // We call tools.addClassToElements() in order to add a className to one or many elements.
+      // We call tools.addClassToElements() in order to add a className to one or several elements.
       tools.addClassToElements(
         "grid__image_pointer-events_none",
         imgs[optionOnId],
         imgs[optionTwoId]
       );
     }
-    // else images don't match each others
+    // Else the images don't match each others.
     else {
-      // we set a src attribute with the path of the folder where we backup the image we want to display.
-      // The image will be the same that the one we set in game.creatBoard() to allow the user to play again.
+      // We set a src attribute with the path of the folder where we backup the image we want to display which will be the same that the one we set in game.creatBoard() to allow the user to play again.;
       imgs[optionOnId].setAttribute("src", game.imagesFolderPath + "blank.png");
       imgs[optionTwoId].setAttribute(
         "src",
         game.imagesFolderPath + "blank.png"
       );
 
-      // We call tools.removeClassFromElements() in order to remove a className from one or many elements.
+      // We call tools.removeClassFromElements() in order to remove a className from one or several elements.
       tools.removeClassFromElements(
         "grid__image_pointer-events_none",
         imgs[optionOnId],
@@ -209,15 +208,15 @@ const game = {
   displayScore: function () {
     console.log("game.displayScore()");
 
-    // We use the innerText property of game.scoreDiv to display the score of the user
-    game.scoreDiv.innerText = "Score : " + `${game.matchedImages.length}`;
+    // We use the innerText property of game.scoreDiv to display the score of the user.
+    game.scoreDiv.innerText = "Score. " + `${game.matchedImages.length}`;
 
     // If the length of game.matchedImages is strictly equal to game.images split by 2 because each images appear two times.
     if (game.matchedImages.length === game.images.length / 2) {
-      // we have collected all the possible images of game.images.
+      // We have collected all the possible images of game.images.
       // We use the innerText property of game.scoreDiv to display the score of the user.
       game.scoreDiv.innerText = " ";
-      game.scoreDiv.innerText = "Congratulations ! you win 🏆 ";
+      game.scoreDiv.innerText = "Congratulations ! You win 🏆 ";
     }
   },
 };
