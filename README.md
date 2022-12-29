@@ -27,7 +27,7 @@ The game ends once all pairs have been found.
 To use the projet you have to follow this steps :
 
 - Git clone the `dev` branch of the repository
-- Go to the folder named `template`
+- Go to the folder `template`
 - Open the file `index.html`
 
 ## 👀 Glimpse
