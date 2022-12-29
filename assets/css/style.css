@@ -45,7 +45,7 @@ body {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 75vh;
   }
 
   .header {
@@ -53,7 +53,7 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    margin: 2em 0 0 0;
+    margin: 0;
     font-family: "Press Start 2P", cursive;
     text-align: center;
     color: var(--red);
@@ -65,7 +65,7 @@ body {
 
   .score {
     font-size: 1em;
-    margin: 4em 0 0 0;
+    margin: 2em 0 2em 0;
   }
 
   .grid {
@@ -79,6 +79,17 @@ body {
   .grid__image {
     cursor: pointer;
     user-select: none;
+  }
+
+  .grid__image-check-mark {
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+  }
+
+  .grid__image-check-mark_color_green {
+    filter: invert(59%) sepia(19%) saturate(7109%) hue-rotate(81deg)
+      brightness(119%) contrast(123%);
   }
 }
 

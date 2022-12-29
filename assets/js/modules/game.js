@@ -158,21 +158,35 @@ const game = {
       alert("You find a match ! ✅");
 
       // We set a src attribute with the path of the folder where we backup the image we want to display.
-      imgs[optionOnId].setAttribute("src", game.imagesFolderPath + "white.png");
+      imgs[optionOnId].setAttribute(
+        "src",
+        game.imagesFolderPath + "check-mark.svg"
+      );
       imgs[optionTwoId].setAttribute(
         "src",
-        game.imagesFolderPath + "white.png"
+        game.imagesFolderPath + "check-mark.svg"
       );
 
       // We push each game.clickedImages to game.matchedImages.
       game.matchedImages.push(game.clickedImages);
 
-      // We call tools.addClassToElements() in order to add a className to one or several elements.
-      tools.addClassToElements(
-        "grid__image_pointer-events_none",
+      // We call tools.addClassesToElement() in order to add one or several classNames to the element.
+      tools.addClassesToElement(
         imgs[optionOnId],
-        imgs[optionTwoId]
+        "grid__image-check-mark",
+        "grid__image-check-mark_color_green"
       );
+      // We call tools.addClassesToElement() in order to add one or several classNames to the element.
+      tools.addClassesToElement(
+        imgs[optionTwoId],
+        "grid__image-check-mark",
+        "grid__image-check-mark_color_green"
+      );
+
+      // console.log(game.clickedImages[0]);
+      // console.log(game.clickedImages[1]);
+      // console.log(imgs[optionOnId]);
+      // console.log(imgs[optionTwoId]);
     }
     // Else the images don't match each others.
     else {
@@ -191,7 +205,7 @@ const game = {
       );
 
       // We display a dialog box with a message to te browser.
-      alert("The images dosen't match ❌. Try again !");
+      alert("The images do not match ❌. Try again !");
     }
 
     // We empty our array to allow the user to start playing again.
@@ -209,7 +223,7 @@ const game = {
     console.log("game.displayScore()");
 
     // We use the innerText property of game.scoreDiv to display the score of the user.
-    game.scoreDiv.innerText = "Score. " + `${game.matchedImages.length}`;
+    game.scoreDiv.innerText = "Score : " + `${game.matchedImages.length}`;
 
     // If the length of game.matchedImages is strictly equal to game.images split by 2 because each images appear two times.
     if (game.matchedImages.length === game.images.length / 2) {

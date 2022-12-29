@@ -9,7 +9,7 @@ const tools = {
    * @return {void}
    */
   addClassToElements: function (className, ...elements) {
-    console.log("tools.addClassToElements()");
+    // console.log("tools.addClassToElements()");
 
     // For each element of elements.
     for (let element of elements) {
@@ -24,10 +24,40 @@ const tools = {
    * @return {void}
    */
   removeClassFromElements: function (className, ...elements) {
-    console.log("tools.removeClassFromElements()");
+    // console.log("tools.removeClassFromElements()");
 
     // For each element of elements.
     for (let element of elements) {
+      // We use the classList API in order to remove className from element.
+      element.classList.remove(className);
+    }
+  },
+  /**
+   * Method that add one or several CSS classes to one element.
+   * @param {Array} element
+   * @param {String} classNames
+   * @return {void}
+   */
+  addClassesToElement: function (element, ...classNames) {
+    // console.log("tools.addClassesToElement()");
+
+    // For each className of classNames.
+    for (let className of classNames) {
+      // We use the classList API in order to add className to element.
+      element.classList.add(className);
+    }
+  },
+  /**
+   * Method that remove one or several CSS classes from one element.
+   * @param {Array} element
+   * @param {String} classNames
+   * @return {void}
+   */
+  removeClassesFromElement: function (element, ...classNames) {
+    // console.log("tools.removeClassesFromElement()");
+
+    // For each className of classNames.
+    for (let className of classNames) {
       // We use the classList API in order to remove className from element.
       element.classList.remove(className);
     }
