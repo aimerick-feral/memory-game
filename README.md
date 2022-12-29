@@ -1,6 +1,6 @@
 # Memory Game
 
-The **Memory Game** project is game that can help you to train your memory.
+The **Memory Game** project is a game that can help you to train your memory.
 
 ## 📜 Game's Rules
 
