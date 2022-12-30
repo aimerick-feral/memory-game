@@ -2,11 +2,13 @@ const game = {
   // Proprietes availables in the object.
   imagesFolderPath: null,
   grid: null,
-  scoreDiv: null,
+  score: null,
+  message: null,
   images: [],
   clickedImages: [],
   clickedImageIds: [],
   matchedImages: [],
+  numberOfAttempts: null,
   init: function () {
     console.log("Hello world, I'm game.js 👾");
 
@@ -68,10 +70,14 @@ const game = {
     // We randomize game.images.
     game.images.sort(() => 0.5 - Math.random());
 
+    // We initialize a counter for the number of attempts.
+    game.numberOfAttempts = 0;
+
     // We get the DOM elements that we need to interacte with.
 
     game.grid = document.querySelector(".grid");
-    game.scoreDiv = document.getElementById("score");
+    game.score = document.getElementById("score");
+    game.message = document.getElementById("message");
 
     // If the DOM element exist.
     if (game.grid) {
@@ -133,6 +139,9 @@ const game = {
     if (game.clickedImages.length === 2) {
       // We call the method game.checkForMatch() after a delay of 150 milliseconds to be shure that the code don't excute to fast.
       setTimeout(game.checkForMatch, 150);
+
+      // We add a 1 to game.numberOfAttempts.
+      game.numberOfAttempts++;
     }
   },
   /**
@@ -150,6 +159,11 @@ const game = {
     const optionOnId = game.clickedImageIds[0];
     // We get the second value of game.clickedImageIds which is the id of the second clickedImage.
     const optionTwoId = game.clickedImageIds[1];
+
+    // console.log(game.clickedImages[0]);
+    // console.log(game.clickedImages[1]);
+    // console.log(imgs[optionOnId]);
+    // console.log(imgs[optionTwoId]);
 
     // The first value of game.clickedImages is the name of the image it contain.
     // If the name of the first game.clickedImages is strictly equal to the name of the second game.clickedImages.
@@ -182,11 +196,6 @@ const game = {
         "grid__image-check-mark",
         "grid__image-check-mark_color_green"
       );
-
-      // console.log(game.clickedImages[0]);
-      // console.log(game.clickedImages[1]);
-      // console.log(imgs[optionOnId]);
-      // console.log(imgs[optionTwoId]);
     }
     // Else the images don't match each others.
     else {
@@ -222,15 +231,18 @@ const game = {
   displayScore: function () {
     console.log("game.displayScore()");
 
-    // We use the innerText property of game.scoreDiv to display the score of the user.
-    game.scoreDiv.innerText = "Score : " + `${game.matchedImages.length}`;
+    // We use the innerText property of game.score to display the score of the user.
+    game.score.innerText =
+      "Score : " +
+      `${game.matchedImages.length}` +
+      " / " +
+      `${game.numberOfAttempts}`;
 
     // If the length of game.matchedImages is strictly equal to game.images split by 2 because each images appear two times.
     if (game.matchedImages.length === game.images.length / 2) {
       // We have collected all the possible images of game.images.
-      // We use the innerText property of game.scoreDiv to display the score of the user.
-      game.scoreDiv.innerText = " ";
-      game.scoreDiv.innerText = "Congratulations ! You win 🏆 ";
+      // We use the innerText property of game.message to display the score of the user.
+      game.message.innerText = "Congratulations ! You win 🏆 ";
     }
   },
 };

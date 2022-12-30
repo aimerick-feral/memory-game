@@ -33,7 +33,7 @@ To use the projet you have to follow this steps :
 ## 👀 Glimpse
 
 ▶️ Memory Game - Mobile Glimpse :
-[![IMAGE ALT TEXT HERE](https://i3.ytimg.com/vi/dTb4wUy4jlg/maxresdefault.jpg)](https://www.youtube.com/watch?v=dTb4wUy4jlg&list=PLmG5X1Z2gVyXupE61ujwPTXpCRVbOY1EG&index=2)
+[![IMAGE ALT TEXT HERE](https://i3.ytimg.com/vi/7Fc_hCDhST4/maxresdefault.jpg)](https://www.youtube.com/watch?v=7Fc_hCDhST4&list=PLmG5X1Z2gVyXupE61ujwPTXpCRVbOY1EG&index=1)
 
 ▶️ Memory Game - Desktop Glimpse :
-[![IMAGE ALT TEXT HERE](https://i3.ytimg.com/vi/hgGwdZX58zc/maxresdefault.jpg)](https://www.youtube.com/watch?v=hgGwdZX58zc&list=PLmG5X1Z2gVyXupE61ujwPTXpCRVbOY1EG&index=1)
+[![IMAGE ALT TEXT HERE](https://i3.ytimg.com/vi/z5SUXi-4t2k/maxresdefault.jpg)](https://www.youtube.com/watch?v=z5SUXi-4t2k&list=PLmG5X1Z2gVyXupE61ujwPTXpCRVbOY1EG&index=2)
