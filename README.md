@@ -32,4 +32,4 @@ To use the projet you have to follow this steps :
 
 ## 👀 Glimpse
 
-http://aimerickferal.com/projects/memory-game
+https://aimerickferal.com/projects/memory-game
