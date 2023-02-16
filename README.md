@@ -16,11 +16,11 @@ The game ends once all pairs have been found.
 - **Languages**
 
   - Front  
-    ![](github/images/html.svg) ![](github/images/css.svg) ![](github/images/javascript.svg)
+    ![](setup/images/html.svg) ![](setup/images/css.svg) ![](setup/images/javascript.svg)
 
 - **Source-Code Editor**
 
-  ![](github/images/visual-studio-code.svg)
+  ![](setup/images/visual-studio-code.svg)
 
 ## ⚙️ Database & Set Up
 
